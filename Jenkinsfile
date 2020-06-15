@@ -18,5 +18,10 @@ pipeline {
             sh 'ls -1'
             }
         }
+        stage("docker image build") {
+            steps {
+                docker build -t mynginx .
+            }
+        }
     }
 }
