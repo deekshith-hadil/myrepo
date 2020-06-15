@@ -14,8 +14,8 @@ pipeline {
                 extensions: [[$class: 'CleanCheckout']], 
                 submoduleCfg: [], 
                 userRemoteConfigs: [[url: 'https://github.com/deekshith-hadil/myrepo.git']]
-                sh 'ls -1'
             ])
+            sh 'ls -1'
             }
         }
     }
