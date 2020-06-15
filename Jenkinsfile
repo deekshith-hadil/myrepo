@@ -2,12 +2,12 @@ pipeline {
     agent any
     stages {
         stage("clear workspace") {
-            step {
+            steps {
                 deleteDir()
             }
         }
         stage("clone git") {
-            step {
+            steps {
                 checkout([$class: 'GitSCM', userRemoteConfigs: [url: 'https://github.com/deekshith-hadil/myrepo.git']])
                 sh 'ls -1'
             }
