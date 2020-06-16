@@ -23,5 +23,12 @@ pipeline {
                 sh 'docker build -t mynginx .'
             }
         }
+        stage("push image to the respository") {
+            steps {
+                docker.withRegistry('https://hub.docker.com/deekshithhadil/firstapp', 'docker-login') {
+                docker.build('mynginx').push('latest')
+                }
+            }
+        }
     }
 }
