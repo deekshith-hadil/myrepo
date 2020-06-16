@@ -25,8 +25,8 @@ pipeline {
         }
         stage("push image to the respository") {
             steps {
-                docker.withRegistry('https://hub.docker.com/deekshithhadil/firstapp', 'docker-login') {
-                docker.build('mynginx').push('latest')
+                docker.withRegistry('https://index.docker.io/v1/', 'docker-login') {
+                docker.build('mynginx').push()
                 }
             }
         }
