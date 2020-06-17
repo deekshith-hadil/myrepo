@@ -26,8 +26,8 @@ pipeline {
         stage("push image to the respository") {
             steps {
                 sh 'docker image push deekshithhadil/firstapp'
-                }
             }
         }
     }
 }
+
