@@ -2,7 +2,7 @@ pipeline {
     }
     agent any
     environment {
-        versionnumber = $(date +%Y%m%d-%H%M%S)
+        versionnumber = "$(date +%Y%m%d-%H%M%S)"
     }
     stages {
         stage("clear workspace") {
