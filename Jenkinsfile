@@ -26,7 +26,7 @@ pipeline {
         stage("push image to the respository") {
             steps {
                 echo "version number ${versionnumber}"
-                sh 'docker image push deekshithhadil/firstapp:${versionnumber}'
+                //sh 'docker image push deekshithhadil/firstapp:${versionnumber}'//
             }
         }
     }
