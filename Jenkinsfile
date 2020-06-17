@@ -1,5 +1,9 @@
 pipeline {
+    }
     agent any
+    environment {
+        versionnumber = $(date +%Y%m%d-%H%M%S)
+    }
     stages {
         stage("clear workspace") {
             steps {
@@ -14,12 +18,14 @@ pipeline {
         }
         stage("docker image build") {
             steps {
-                sh 'docker build -t deekshithhadil/firstapp:$(date +%Y%m%d-%H%M%S) .'
+                echo "version number ${versionnumber}"
+                sh 'docker build -t deekshithhadil/firstapp:${versionnumber} .'
             }
         }
         stage("push image to the respository") {
             steps {
-                sh 'docker image push deekshithhadil/firstapp'
+                echo "version number ${versionnumber}"
+                sh 'docker image push deekshithhadil/firstapp:${versionnumber}'
             }
         }
     }
