@@ -20,13 +20,12 @@ pipeline {
         }
         stage("docker image build") {
             steps {
-                sh 'docker build -t mynginx .'
+                sh 'docker build -t deekshithhadil/firstapp .'
             }
         }
         stage("push image to the respository") {
             steps {
-                docker.withRegistry('https://index.docker.io/v1/', 'docker-login') {
-                docker.build('mynginx').push()
+                sh 'docker image push deekshithhadil/firstapp'
                 }
             }
         }
