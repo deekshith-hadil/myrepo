@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        versionnumber="$(date +%Y%m%d-%H%M%S)"
+        versionnumber = 1234
     }
 
     stages {
