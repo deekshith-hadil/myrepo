@@ -20,7 +20,7 @@ pipeline {
         }
         stage("docker image build") {
             steps {
-                sh 'docker build -t deekshithhadil/firstapp .'
+                sh 'docker build -t deekshithhadil/firstapp:$(date +%Y%m%d-%H%M%S) .'
             }
         }
         stage("push image to the respository") {
